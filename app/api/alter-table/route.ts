@@ -5,7 +5,9 @@ export async function GET(request: Request) {
   try {
     const result = await sql`
 		ALTER TABLE Assets
-		RENAME Slub TO Slug
+		ADD COLUMN Exchange VARCHAR(255)
+    ADD COLUMN Tags VARCHAR(255)
+    ADD
 	`;
 
     return NextResponse.json({ result }, { status: 200 });
